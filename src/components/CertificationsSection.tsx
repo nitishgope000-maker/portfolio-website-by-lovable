@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
-import { Award } from "lucide-react";
+import logoGoogle from "@/assets/logo-google.png";
+import logoJpmc from "@/assets/logo-jpmc.webp";
+import logoDeloitte from "@/assets/logo-deloitte.webp";
+import logoTata from "@/assets/logo-tata.webp";
 
 const certs = [
   {
@@ -7,30 +10,35 @@ const certs = [
     org: "Google on Coursera · Dec 2025 – Feb 2026",
     description:
       "Comprehensive 8-course program covering data cleaning, analysis, visualization, and R programming. Gained hands-on experience with spreadsheets, SQL, Tableau, and R to make data-driven decisions.",
+    logo: logoGoogle,
   },
   {
     title: "Quantitative Research Simulation",
     org: "JPMorgan Chase · Mar 2026",
     description:
       "Virtual experience program focused on quantitative research methods including statistical analysis, financial modeling, and data-driven investment strategies.",
+    logo: logoJpmc,
   },
   {
     title: "Data Analytics Job Simulation",
     org: "Deloitte · Oct 2025",
     description:
       "Simulation covering data analytics workflows, dashboard creation, and deriving business insights from complex datasets using industry-standard methodologies.",
+    logo: logoDeloitte,
   },
   {
     title: "GenAI Data Analytics",
     org: "Tata · Sep 2025",
     description:
       "Explored the application of Generative AI in data analytics pipelines, including prompt engineering, AI-assisted data exploration, and automated insight generation.",
+    logo: logoTata,
   },
   {
     title: "Data Visualization: Empowering Business with Effective Insights",
     org: "Tata · Dec 2025",
     description:
       "Focused on creating impactful data visualizations, designing executive-level dashboards, and communicating analytical findings to stakeholders effectively.",
+    logo: logoTata,
   },
 ];
 
@@ -61,8 +69,12 @@ const CertificationsSection = () => (
           >
             {/* Left side */}
             <div className="sm:w-2/5 flex items-start gap-4 shrink-0">
-              <div className="w-11 h-11 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-primary-foreground transition-colors mt-0.5">
-                <Award size={20} />
+              <div className="w-11 h-11 rounded-full overflow-hidden shrink-0 mt-0.5 border border-border bg-white">
+                <img
+                  src={c.logo}
+                  alt={c.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <h3 className="font-bold text-sm leading-snug">{c.title}</h3>
