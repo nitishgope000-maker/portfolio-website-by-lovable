@@ -32,6 +32,7 @@ const certs = [
     description:
       "Explored the application of Generative AI in data analytics pipelines, including prompt engineering, AI-assisted data exploration, and automated insight generation.",
     logo: logoTata,
+    logoContain: true,
   },
   {
     title: "Data Visualization: Empowering Business with Effective Insights",
@@ -39,6 +40,7 @@ const certs = [
     description:
       "Focused on creating impactful data visualizations, designing executive-level dashboards, and communicating analytical findings to stakeholders effectively.",
     logo: logoTata,
+    logoContain: true,
   },
 ];
 
