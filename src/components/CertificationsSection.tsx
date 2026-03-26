@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Award } from "lucide-react";
 
 const certs = [
+  { title: "Google Data Analytics Professional Certificate", org: "Google (Coursera) · Dec 2025 – Feb 2026" },
   { title: "Quantitative Research Simulation", org: "JPMorgan Chase" },
   { title: "Data Analytics", org: "Deloitte" },
   { title: "GenAI Data Analytics", org: "Tata" },
