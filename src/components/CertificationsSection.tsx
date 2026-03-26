@@ -10,25 +10,25 @@ const certs = [
   },
   {
     title: "Quantitative Research Simulation",
-    org: "JPMorgan Chase",
+    org: "JPMorgan Chase · Mar 2026",
     description:
       "Virtual experience program focused on quantitative research methods including statistical analysis, financial modeling, and data-driven investment strategies.",
   },
   {
-    title: "Data Analytics",
-    org: "Deloitte",
+    title: "Data Analytics Job Simulation",
+    org: "Deloitte · Oct 2025",
     description:
       "Simulation covering data analytics workflows, dashboard creation, and deriving business insights from complex datasets using industry-standard methodologies.",
   },
   {
     title: "GenAI Data Analytics",
-    org: "Tata",
+    org: "Tata · Sep 2025",
     description:
       "Explored the application of Generative AI in data analytics pipelines, including prompt engineering, AI-assisted data exploration, and automated insight generation.",
   },
   {
-    title: "Data Visualization",
-    org: "Tata",
+    title: "Data Visualization: Empowering Business with Effective Insights",
+    org: "Tata · Dec 2025",
     description:
       "Focused on creating impactful data visualizations, designing executive-level dashboards, and communicating analytical findings to stakeholders effectively.",
   },
