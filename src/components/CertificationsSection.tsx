@@ -2,11 +2,36 @@ import { motion } from "framer-motion";
 import { Award } from "lucide-react";
 
 const certs = [
-  { title: "Google Data Analytics Professional Certificate", org: "Google (Coursera) · Dec 2025 – Feb 2026" },
-  { title: "Quantitative Research Simulation", org: "JPMorgan Chase" },
-  { title: "Data Analytics", org: "Deloitte" },
-  { title: "GenAI Data Analytics", org: "Tata" },
-  { title: "Data Visualization", org: "Tata" },
+  {
+    title: "Google Data Analytics Professional Certificate",
+    org: "Google on Coursera · Dec 2025 – Feb 2026",
+    description:
+      "Comprehensive 8-course program covering data cleaning, analysis, visualization, and R programming. Gained hands-on experience with spreadsheets, SQL, Tableau, and R to make data-driven decisions.",
+  },
+  {
+    title: "Quantitative Research Simulation",
+    org: "JPMorgan Chase",
+    description:
+      "Virtual experience program focused on quantitative research methods including statistical analysis, financial modeling, and data-driven investment strategies.",
+  },
+  {
+    title: "Data Analytics",
+    org: "Deloitte",
+    description:
+      "Simulation covering data analytics workflows, dashboard creation, and deriving business insights from complex datasets using industry-standard methodologies.",
+  },
+  {
+    title: "GenAI Data Analytics",
+    org: "Tata",
+    description:
+      "Explored the application of Generative AI in data analytics pipelines, including prompt engineering, AI-assisted data exploration, and automated insight generation.",
+  },
+  {
+    title: "Data Visualization",
+    org: "Tata",
+    description:
+      "Focused on creating impactful data visualizations, designing executive-level dashboards, and communicating analytical findings to stakeholders effectively.",
+  },
 ];
 
 const CertificationsSection = () => (
@@ -24,21 +49,33 @@ const CertificationsSection = () => (
         </h2>
       </motion.div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto flex flex-col gap-5">
         {certs.map((c, i) => (
           <motion.div
             key={c.title}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="p-6 rounded-xl bg-card border border-border text-center card-hover group"
+            transition={{ delay: i * 0.08 }}
+            className="flex flex-col sm:flex-row gap-4 sm:gap-8 p-6 rounded-xl bg-card border border-border card-hover group"
           >
-            <div className="w-14 h-14 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-              <Award size={26} />
+            {/* Left side */}
+            <div className="sm:w-2/5 flex items-start gap-4 shrink-0">
+              <div className="w-11 h-11 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-primary-foreground transition-colors mt-0.5">
+                <Award size={20} />
+              </div>
+              <div>
+                <h3 className="font-bold text-sm leading-snug">{c.title}</h3>
+                <p className="text-xs text-muted-foreground mt-1">{c.org}</p>
+              </div>
             </div>
-            <h3 className="font-bold text-sm mb-1">{c.title}</h3>
-            <p className="text-xs text-muted-foreground">{c.org}</p>
+
+            {/* Right side */}
+            <div className="sm:w-3/5">
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {c.description}
+              </p>
+            </div>
           </motion.div>
         ))}
       </div>
