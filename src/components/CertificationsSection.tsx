@@ -32,6 +32,7 @@ const certs = [
     description:
       "Explored the application of Generative AI in data analytics pipelines, including prompt engineering, AI-assisted data exploration, and automated insight generation.",
     logo: logoTata,
+    logoContain: true,
   },
   {
     title: "Data Visualization: Empowering Business with Effective Insights",
@@ -39,6 +40,7 @@ const certs = [
     description:
       "Focused on creating impactful data visualizations, designing executive-level dashboards, and communicating analytical findings to stakeholders effectively.",
     logo: logoTata,
+    logoContain: true,
   },
 ];
 
@@ -69,11 +71,11 @@ const CertificationsSection = () => (
           >
             {/* Left side */}
             <div className="sm:w-2/5 flex items-start gap-4 shrink-0">
-              <div className="w-11 h-11 rounded-full overflow-hidden shrink-0 mt-0.5 border border-border bg-white">
+              <div className="w-11 h-11 rounded-full overflow-hidden shrink-0 mt-0.5 border border-border bg-white flex items-center justify-center">
                 <img
                   src={c.logo}
                   alt={c.title}
-                  className="w-full h-full object-cover"
+                  className={c.logoContain ? "w-8 h-8 object-contain" : "w-full h-full object-cover"}
                 />
               </div>
               <div>
