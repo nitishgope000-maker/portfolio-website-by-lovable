@@ -62,10 +62,10 @@ const HeroSection = () => {
             Nitish <span className="gradient-text">Gope</span>
           </h1>
           <p className="text-lg text-muted-foreground mb-2">
-            Data Analyst &bull; ML Enthusiast &bull; AI Developer
+            Data Analytics Professional &bull; ML Enthusiast
           </p>
           <p className="text-secondary-foreground/70 max-w-md mb-8">
-            Transforming data into actionable insights and intelligent solutions.
+            Turning raw data into actionable insights through analytics, visualization & data-driven decision making.
           </p>
 
           <div className="flex flex-wrap gap-3 mb-10">
