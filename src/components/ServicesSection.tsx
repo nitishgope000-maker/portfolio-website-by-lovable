@@ -4,32 +4,33 @@ import { BarChart3, BrainCircuit, Palette } from "lucide-react";
 const services = [
   {
     icon: BarChart3,
-    title: "Data Analysis & Visualization",
+    title: "Data Analytics & Insights",
     items: [
-      "Data cleaning & preprocessing",
       "Exploratory Data Analysis (EDA)",
-      "Dashboard creation (Tableau, Excel)",
-      "SQL database management",
+      "Data cleaning & transformation",
+      "Dashboard & report creation (Tableau, Excel)",
+      "SQL & BigQuery data management",
+      "Customer segmentation & churn analysis",
     ],
   },
   {
     icon: BrainCircuit,
-    title: "Machine Learning & AI",
+    title: "Predictive Analytics & ML",
     items: [
-      "Spatial & aerial image analysis",
-      "Predictive modeling & segmentation",
-      "AI automation (voice assistants)",
-      "API integrations",
+      "Predictive modeling & forecasting",
+      "Feature engineering & selection",
+      "Statistical analysis & hypothesis testing",
+      "Data-driven decision support",
     ],
   },
   {
     icon: Palette,
-    title: "Design & Development",
+    title: "Visualization & Storytelling",
     items: [
-      "UI/UX design with Canva",
-      "Version control (Git & GitHub)",
-      "Data-driven prototyping",
-      "Clean documentation",
+      "Interactive dashboards (Tableau)",
+      "Data storytelling & presentations",
+      "Business intelligence reporting",
+      "Clean documentation & insights delivery",
     ],
   },
 ];
