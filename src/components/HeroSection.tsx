@@ -122,7 +122,7 @@ const HeroSection = () => {
                 src={profileImg}
                 alt="Nitish Gope"
                 className="w-full h-full object-cover"
-                style={{ objectPosition: '50% 25%', transform: 'scale(0.92)' }}
+                style={{ objectPosition: '50% 18%', transform: 'scale(1.12)' }}
                 width={512}
                 height={512}
               />
