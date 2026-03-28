@@ -11,6 +11,7 @@ const technicalSkills: Skill[] = [
   { name: "R / RStudio", level: 70 },
   { name: "C", level: 65 },
   { name: "Tableau", level: 80 },
+  { name: "Power BI", level: 80 },
   { name: "Excel (Advanced)", level: 85 },
   { name: "Git & GitHub", level: 75 },
   { name: "AI Tools (ChatGPT, Gemini)", level: 80 },
@@ -23,9 +24,12 @@ const expertise = [
   "Spatial Analysis",
   "ML & Automation",
   "Predictive Modeling",
+  "Business Intelligence",
+  "Data Wrangling",
+  "Statistical Modeling",
 ];
 
-const softSkills = ["Problem Solving", "Teamwork", "Analytical Thinking", "Communication"];
+const softSkills = ["Problem Solving", "Teamwork", "Analytical Thinking", "Communication", "Critical Thinking", "Adaptability", "Time Management"];
 
 const ProgressBar = ({ skill, delay }: { skill: Skill; delay: number }) => (
   <div className="space-y-1.5">
