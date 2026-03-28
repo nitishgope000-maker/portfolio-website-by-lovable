@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, Linkedin, Github, Send } from "lucide-react";
+
+const FloatingShapes = lazy(() => import("@/components/FloatingShapes"));
 
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -13,7 +15,10 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-card/50">
+    <section id="contact" className="py-24 bg-card/50 relative overflow-hidden">
+      <Suspense fallback={null}>
+        <FloatingShapes />
+      </Suspense>
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

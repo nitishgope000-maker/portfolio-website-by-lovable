@@ -1,8 +1,14 @@
+import { lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import { GraduationCap, Brain, Target } from "lucide-react";
 
+const FloatingShapes = lazy(() => import("@/components/FloatingShapes"));
+
 const AboutSection = () => (
-  <section id="about" className="py-24 relative">
+  <section id="about" className="py-24 relative overflow-hidden">
+    <Suspense fallback={null}>
+      <FloatingShapes />
+    </Suspense>
     <div className="container mx-auto px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
