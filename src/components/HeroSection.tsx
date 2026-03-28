@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Mail } from "lucide-react";
 import profileImg from "@/assets/profile.png";
+
+const ParticleNetwork = lazy(() => import("@/components/ParticleNetwork"));
 
 const terminalLines = [
   "> Analyzing Data...",
@@ -46,6 +48,11 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center pt-16 grid-bg relative overflow-hidden">
+      {/* 3D Particle Network */}
+      <Suspense fallback={null}>
+        <ParticleNetwork />
+      </Suspense>
+
       {/* Glow orbs */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
