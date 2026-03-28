@@ -1,4 +1,7 @@
+import { lazy, Suspense } from "react";
 import { motion } from "framer-motion";
+
+const FloatingShapes = lazy(() => import("@/components/FloatingShapes"));
 
 interface Skill {
   name: string;
@@ -51,7 +54,10 @@ const ProgressBar = ({ skill, delay }: { skill: Skill; delay: number }) => (
 );
 
 const SkillsSection = () => (
-  <section id="skills" className="py-24 bg-card/50">
+  <section id="skills" className="py-24 bg-card/50 relative overflow-hidden">
+    <Suspense fallback={null}>
+      <FloatingShapes />
+    </Suspense>
     <div className="container mx-auto px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
