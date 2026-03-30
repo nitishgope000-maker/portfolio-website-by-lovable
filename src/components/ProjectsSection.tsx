@@ -1,8 +1,6 @@
-import { useState, lazy, Suspense } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
-
-const FloatingShapes = lazy(() => import("@/components/FloatingShapes"));
 
 const filters = ["All", "AI", "Data Analytics", "ML"];
 

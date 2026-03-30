@@ -1,7 +1,4 @@
-import { lazy, Suspense } from "react";
 import { motion } from "framer-motion";
-
-const FloatingShapes = lazy(() => import("@/components/FloatingShapes"));
 
 interface Skill {
   name: string;

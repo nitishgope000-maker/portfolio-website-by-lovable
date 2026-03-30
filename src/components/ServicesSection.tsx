@@ -1,8 +1,5 @@
-import { lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import { BarChart3, BrainCircuit, Palette } from "lucide-react";
-
-const FloatingShapes = lazy(() => import("@/components/FloatingShapes"));
 
 const services = [
   {

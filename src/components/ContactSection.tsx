@@ -1,8 +1,6 @@
-import { useState, lazy, Suspense } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, Linkedin, Github, Send } from "lucide-react";
-
-const FloatingShapes = lazy(() => import("@/components/FloatingShapes"));
 
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });

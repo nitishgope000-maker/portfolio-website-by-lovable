@@ -1,7 +1,4 @@
-import { lazy, Suspense } from "react";
 import { motion } from "framer-motion";
-
-const FloatingShapes = lazy(() => import("@/components/FloatingShapes"));
 import logoGoogle from "@/assets/logo-google.png";
 import logoJpmc from "@/assets/logo-jpmc.webp";
 import logoDeloitte from "@/assets/logo-deloitte.webp";

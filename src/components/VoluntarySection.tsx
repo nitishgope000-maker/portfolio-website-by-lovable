@@ -1,8 +1,5 @@
-import { lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import { Users, GraduationCap } from "lucide-react";
-
-const FloatingShapes = lazy(() => import("@/components/FloatingShapes"));
 
 const experiences = [
   {
