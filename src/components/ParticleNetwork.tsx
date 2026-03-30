@@ -1,118 +1,112 @@
 import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Text } from "@react-three/drei";
 import * as THREE from "three";
 
-const ORB_COUNT = 5;
-const DIGIT_COUNT = 60;
+const PARTICLE_COUNT = 120;
+const CONNECTION_DISTANCE = 2.2;
 
-function GlowOrb({ position, scale, color }: { position: [number, number, number]; scale: number; color: string }) {
-  const ref = useRef<THREE.Mesh>(null);
-  const glowRef = useRef<THREE.Mesh>(null);
+function Particles() {
+  const meshRef = useRef<THREE.InstancedMesh>(null);
+  const linesRef = useRef<THREE.LineSegments>(null);
+  const dummy = useMemo(() => new THREE.Object3D(), []);
 
-  useFrame((state) => {
-    if (ref.current) {
-      ref.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * 0.5 + position[0]) * 0.3;
+  const particles = useMemo(() => {
+    const pos = [];
+    const vel = [];
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      pos.push(
+        (Math.random() - 0.5) * 14,
+        (Math.random() - 0.5) * 8,
+        (Math.random() - 0.5) * 6
+      );
+      vel.push(
+        (Math.random() - 0.5) * 0.004,
+        (Math.random() - 0.5) * 0.004,
+        (Math.random() - 0.5) * 0.002
+      );
     }
-    if (glowRef.current) {
-      glowRef.current.scale.setScalar(scale * (1.8 + Math.sin(state.clock.elapsedTime * 1.5 + position[0] * 2) * 0.3));
-    }
-  });
-
-  return (
-    <group>
-      {/* Outer glow */}
-      <mesh ref={glowRef} position={position}>
-        <sphereGeometry args={[1, 16, 16]} />
-        <meshBasicMaterial color={color} transparent opacity={0.04} />
-      </mesh>
-      {/* Core orb */}
-      <mesh ref={ref} position={position} scale={scale}>
-        <sphereGeometry args={[1, 16, 16]} />
-        <meshBasicMaterial color={color} transparent opacity={0.15} />
-      </mesh>
-      {/* Inner bright core */}
-      <mesh position={position} scale={scale * 0.4}>
-        <sphereGeometry args={[1, 12, 12]} />
-        <meshBasicMaterial color={color} transparent opacity={0.35} />
-      </mesh>
-    </group>
-  );
-}
-
-function OrbitingDigit({ orbCenter, radius, speed, offset, digit }: {
-  orbCenter: [number, number, number];
-  radius: number;
-  speed: number;
-  offset: number;
-  digit: string;
-}) {
-  const ref = useRef<THREE.Group>(null);
-
-  useFrame((state) => {
-    if (ref.current) {
-      const t = state.clock.elapsedTime * speed + offset;
-      ref.current.position.x = orbCenter[0] + Math.cos(t) * radius;
-      ref.current.position.y = orbCenter[1] + Math.sin(t * 0.7) * radius * 0.6;
-      ref.current.position.z = orbCenter[2] + Math.sin(t) * radius * 0.5;
-    }
-  });
-
-  return (
-    <group ref={ref}>
-      <Text
-        fontSize={0.12}
-        color="#33ddff"
-        anchorX="center"
-        anchorY="middle"
-        fillOpacity={0.5}
-        font={undefined}
-      >
-        {digit}
-      </Text>
-    </group>
-  );
-}
-
-function BinaryOrbs() {
-  const orbs = useMemo(() => [
-    { pos: [-4, 1.5, -2] as [number, number, number], scale: 0.5, color: "#33ddff" },
-    { pos: [4, -1, -1.5] as [number, number, number], scale: 0.4, color: "#8b5cf6" },
-    { pos: [-2, -2.5, -3] as [number, number, number], scale: 0.35, color: "#33ddff" },
-    { pos: [2, 2.5, -2] as [number, number, number], scale: 0.3, color: "#8b5cf6" },
-    { pos: [0, -1, -2.5] as [number, number, number], scale: 0.25, color: "#33ddff" },
-  ], []);
-
-  const digits = useMemo(() => {
-    const items: { orbIdx: number; radius: number; speed: number; offset: number; digit: string }[] = [];
-    for (let i = 0; i < DIGIT_COUNT; i++) {
-      const orbIdx = i % ORB_COUNT;
-      items.push({
-        orbIdx,
-        radius: 0.6 + Math.random() * 1.2,
-        speed: 0.3 + Math.random() * 0.6,
-        offset: Math.random() * Math.PI * 2,
-        digit: Math.random() > 0.5 ? "1" : "0",
-      });
-    }
-    return items;
+    return { positions: new Float32Array(pos), velocities: new Float32Array(vel) };
   }, []);
+
+  const lineGeometry = useMemo(() => {
+    const geo = new THREE.BufferGeometry();
+    const maxLines = PARTICLE_COUNT * 6;
+    geo.setAttribute("position", new THREE.BufferAttribute(new Float32Array(maxLines * 6), 3));
+    geo.setAttribute("color", new THREE.BufferAttribute(new Float32Array(maxLines * 6), 3));  
+    geo.setDrawRange(0, 0);
+    return geo;
+  }, []);
+
+  useFrame(() => {
+    if (!meshRef.current) return;
+
+    const { positions, velocities } = particles;
+
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      const i3 = i * 3;
+      positions[i3] += velocities[i3];
+      positions[i3 + 1] += velocities[i3 + 1];
+      positions[i3 + 2] += velocities[i3 + 2];
+
+      if (positions[i3] > 7 || positions[i3] < -7) velocities[i3] *= -1;
+      if (positions[i3 + 1] > 4 || positions[i3 + 1] < -4) velocities[i3 + 1] *= -1;
+      if (positions[i3 + 2] > 3 || positions[i3 + 2] < -3) velocities[i3 + 2] *= -1;
+
+      dummy.position.set(positions[i3], positions[i3 + 1], positions[i3 + 2]);
+      dummy.updateMatrix();
+      meshRef.current.setMatrixAt(i, dummy.matrix);
+    }
+    meshRef.current.instanceMatrix.needsUpdate = true;
+
+    const posAttr = lineGeometry.getAttribute("position") as THREE.BufferAttribute;
+    const colAttr = lineGeometry.getAttribute("color") as THREE.BufferAttribute;
+    let lineIdx = 0;
+
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      for (let j = i + 1; j < PARTICLE_COUNT; j++) {
+        const i3 = i * 3, j3 = j * 3;
+        const dx = positions[i3] - positions[j3];
+        const dy = positions[i3 + 1] - positions[j3 + 1];
+        const dz = positions[i3 + 2] - positions[j3 + 2];
+        const dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
+
+        if (dist < CONNECTION_DISTANCE) {
+          const alpha = 1 - dist / CONNECTION_DISTANCE;
+          const li = lineIdx * 6;
+          posAttr.array[li] = positions[i3];
+          posAttr.array[li + 1] = positions[i3 + 1];
+          posAttr.array[li + 2] = positions[i3 + 2];
+          posAttr.array[li + 3] = positions[j3];
+          posAttr.array[li + 4] = positions[j3 + 1];
+          posAttr.array[li + 5] = positions[j3 + 2];
+
+          const ci = lineIdx * 6;
+          colAttr.array[ci] = 0.2 * alpha;
+          colAttr.array[ci + 1] = 0.85 * alpha;
+          colAttr.array[ci + 2] = 0.95 * alpha;
+          colAttr.array[ci + 3] = 0.2 * alpha;
+          colAttr.array[ci + 4] = 0.85 * alpha;
+          colAttr.array[ci + 5] = 0.95 * alpha;
+
+          lineIdx++;
+        }
+      }
+    }
+
+    posAttr.needsUpdate = true;
+    colAttr.needsUpdate = true;
+    lineGeometry.setDrawRange(0, lineIdx * 2);
+  });
 
   return (
     <>
-      {orbs.map((orb, i) => (
-        <GlowOrb key={i} position={orb.pos} scale={orb.scale} color={orb.color} />
-      ))}
-      {digits.map((d, i) => (
-        <OrbitingDigit
-          key={i}
-          orbCenter={orbs[d.orbIdx].pos}
-          radius={d.radius}
-          speed={d.speed}
-          offset={d.offset}
-          digit={d.digit}
-        />
-      ))}
+      <instancedMesh ref={meshRef} args={[undefined, undefined, PARTICLE_COUNT]}>
+        <sphereGeometry args={[0.03, 8, 8]} />
+        <meshBasicMaterial color="#33ddff" transparent opacity={0.7} />
+      </instancedMesh>
+      <lineSegments ref={linesRef} geometry={lineGeometry}>
+        <lineBasicMaterial vertexColors transparent opacity={0.4} />
+      </lineSegments>
     </>
   );
 }
@@ -125,7 +119,7 @@ const ParticleNetwork = () => (
       gl={{ antialias: false, alpha: true }}
       style={{ background: "transparent" }}
     >
-      <BinaryOrbs />
+      <Particles />
     </Canvas>
   </div>
 );
