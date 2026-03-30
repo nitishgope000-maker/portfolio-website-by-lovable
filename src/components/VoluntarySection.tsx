@@ -22,9 +22,6 @@ const experiences = [
 
 const VoluntarySection = () => (
   <section id="voluntary" className="py-24 relative overflow-hidden">
-    <Suspense fallback={null}>
-      <FloatingShapes />
-    </Suspense>
     <div className="container mx-auto px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}

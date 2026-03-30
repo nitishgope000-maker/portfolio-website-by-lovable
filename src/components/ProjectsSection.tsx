@@ -40,9 +40,6 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="py-24 bg-card/50 relative overflow-hidden">
-      <Suspense fallback={null}>
-        <FloatingShapes />
-      </Suspense>
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
