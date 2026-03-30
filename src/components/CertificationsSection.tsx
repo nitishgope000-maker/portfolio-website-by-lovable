@@ -1,7 +1,4 @@
-import { lazy, Suspense } from "react";
 import { motion } from "framer-motion";
-
-const FloatingShapes = lazy(() => import("@/components/FloatingShapes"));
 import logoGoogle from "@/assets/logo-google.png";
 import logoJpmc from "@/assets/logo-jpmc.webp";
 import logoDeloitte from "@/assets/logo-deloitte.webp";
@@ -49,9 +46,6 @@ const certs = [
 
 const CertificationsSection = () => (
   <section id="certifications" className="py-24 relative overflow-hidden">
-    <Suspense fallback={null}>
-      <FloatingShapes />
-    </Suspense>
     <div className="container mx-auto px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}

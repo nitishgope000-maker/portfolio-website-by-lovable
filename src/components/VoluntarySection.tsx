@@ -1,8 +1,5 @@
-import { lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import { Users, GraduationCap } from "lucide-react";
-
-const FloatingShapes = lazy(() => import("@/components/FloatingShapes"));
 
 const experiences = [
   {
@@ -25,9 +22,6 @@ const experiences = [
 
 const VoluntarySection = () => (
   <section id="voluntary" className="py-24 relative overflow-hidden">
-    <Suspense fallback={null}>
-      <FloatingShapes />
-    </Suspense>
     <div className="container mx-auto px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
