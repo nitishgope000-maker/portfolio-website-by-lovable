@@ -1,59 +1,85 @@
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float } from "@react-three/drei";
+import { Text } from "@react-three/drei";
 import * as THREE from "three";
 
-function Octahedron({ position, scale, speed }: { position: [number, number, number]; scale: number; speed: number }) {
+function MiniOrb({ position, scale, color }: { position: [number, number, number]; scale: number; color: string }) {
   const ref = useRef<THREE.Mesh>(null);
-  useFrame((_, delta) => {
+  const glowRef = useRef<THREE.Mesh>(null);
+
+  useFrame((state) => {
     if (ref.current) {
-      ref.current.rotation.x += delta * speed * 0.3;
-      ref.current.rotation.y += delta * speed * 0.5;
+      ref.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * 0.6 + position[0] * 3) * 0.25;
+    }
+    if (glowRef.current) {
+      glowRef.current.scale.setScalar(scale * (1.6 + Math.sin(state.clock.elapsedTime * 1.2 + position[2]) * 0.2));
     }
   });
+
   return (
-    <Float speed={1.5} rotationIntensity={0.4} floatIntensity={0.6}>
-      <mesh ref={ref} position={position} scale={scale}>
-        <octahedronGeometry args={[1, 0]} />
-        <meshBasicMaterial color="#33ddff" wireframe transparent opacity={0.15} />
+    <group>
+      <mesh ref={glowRef} position={position}>
+        <sphereGeometry args={[1, 12, 12]} />
+        <meshBasicMaterial color={color} transparent opacity={0.03} />
       </mesh>
-    </Float>
+      <mesh ref={ref} position={position} scale={scale}>
+        <sphereGeometry args={[1, 12, 12]} />
+        <meshBasicMaterial color={color} transparent opacity={0.12} />
+      </mesh>
+    </group>
   );
 }
 
-function Torus({ position, scale, speed }: { position: [number, number, number]; scale: number; speed: number }) {
-  const ref = useRef<THREE.Mesh>(null);
-  useFrame((_, delta) => {
+function OrbitingBit({ center, radius, speed, offset, char }: {
+  center: [number, number, number]; radius: number; speed: number; offset: number; char: string;
+}) {
+  const ref = useRef<THREE.Group>(null);
+  useFrame((state) => {
     if (ref.current) {
-      ref.current.rotation.x += delta * speed * 0.2;
-      ref.current.rotation.z += delta * speed * 0.4;
+      const t = state.clock.elapsedTime * speed + offset;
+      ref.current.position.x = center[0] + Math.cos(t) * radius;
+      ref.current.position.y = center[1] + Math.sin(t * 0.8) * radius * 0.5;
+      ref.current.position.z = center[2] + Math.sin(t) * radius * 0.4;
     }
   });
+
   return (
-    <Float speed={1.2} rotationIntensity={0.3} floatIntensity={0.5}>
-      <mesh ref={ref} position={position} scale={scale}>
-        <torusGeometry args={[1, 0.3, 8, 20]} />
-        <meshBasicMaterial color="#8b5cf6" wireframe transparent opacity={0.12} />
-      </mesh>
-    </Float>
+    <group ref={ref}>
+      <Text fontSize={0.1} color="#33ddff" anchorX="center" anchorY="middle" fillOpacity={0.4} font={undefined}>
+        {char}
+      </Text>
+    </group>
   );
 }
 
-function Icosahedron({ position, scale, speed }: { position: [number, number, number]; scale: number; speed: number }) {
-  const ref = useRef<THREE.Mesh>(null);
-  useFrame((_, delta) => {
-    if (ref.current) {
-      ref.current.rotation.y += delta * speed * 0.3;
-      ref.current.rotation.z += delta * speed * 0.2;
+function SmallBinaryOrbs() {
+  const orbs = useMemo(() => [
+    { pos: [-3.5, 1, -2] as [number, number, number], scale: 0.3, color: "#33ddff" },
+    { pos: [3.5, -0.5, -1.5] as [number, number, number], scale: 0.25, color: "#8b5cf6" },
+    { pos: [0, 2, -2.5] as [number, number, number], scale: 0.2, color: "#33ddff" },
+  ], []);
+
+  const bits = useMemo(() => {
+    const items: { orbIdx: number; radius: number; speed: number; offset: number; char: string }[] = [];
+    for (let i = 0; i < 30; i++) {
+      items.push({
+        orbIdx: i % 3,
+        radius: 0.5 + Math.random() * 0.8,
+        speed: 0.3 + Math.random() * 0.5,
+        offset: Math.random() * Math.PI * 2,
+        char: Math.random() > 0.5 ? "1" : "0",
+      });
     }
-  });
+    return items;
+  }, []);
+
   return (
-    <Float speed={1} rotationIntensity={0.5} floatIntensity={0.4}>
-      <mesh ref={ref} position={position} scale={scale}>
-        <icosahedronGeometry args={[1, 0]} />
-        <meshBasicMaterial color="#33ddff" wireframe transparent opacity={0.1} />
-      </mesh>
-    </Float>
+    <>
+      {orbs.map((o, i) => <MiniOrb key={i} position={o.pos} scale={o.scale} color={o.color} />)}
+      {bits.map((b, i) => (
+        <OrbitingBit key={i} center={orbs[b.orbIdx].pos} radius={b.radius} speed={b.speed} offset={b.offset} char={b.char} />
+      ))}
+    </>
   );
 }
 
@@ -65,11 +91,7 @@ const FloatingShapes = () => (
       gl={{ antialias: false, alpha: true }}
       style={{ background: "transparent" }}
     >
-      <Octahedron position={[-4, 1.5, -2]} scale={0.6} speed={0.8} />
-      <Torus position={[4.5, -1, -1]} scale={0.5} speed={0.6} />
-      <Icosahedron position={[-3, -2, -3]} scale={0.8} speed={0.4} />
-      <Octahedron position={[3, 2.5, -2.5]} scale={0.4} speed={1} />
-      <Torus position={[0, -3, -2]} scale={0.35} speed={0.7} />
+      <SmallBinaryOrbs />
     </Canvas>
   </div>
 );
