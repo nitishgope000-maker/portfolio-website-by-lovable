@@ -32,6 +32,24 @@ const projects = [
     tags: ["AI", "ML"],
     github: "#",
   },
+  {
+    title: "Hotel Performance Analytics Dashboard",
+    desc: "Interactive dashboard analyzing hotel performance metrics including revenue, occupancy rate, ADR, and booking trends.",
+    problem: "Lack of centralized, real-time visibility into hotel revenue and operational KPIs for data-driven decision-making.",
+    tools: ["Power BI", "SQL", "Excel"],
+    outcomes: "Identified seasonal trends and peak booking periods; enabled stakeholder decision-making with dynamic drill-down filters and KPI cards.",
+    tags: ["Data Analytics", "SQL"],
+    github: "#",
+  },
+  {
+    title: "Zepto SQL Data Analysis",
+    desc: "Analyzed real-world grocery delivery dataset to extract actionable business insights on revenue and customer behavior.",
+    problem: "Unstructured grocery delivery data with no clear visibility into top-performing categories and buying patterns.",
+    tools: ["SQL", "MySQL", "PostgreSQL", "Data Analysis"],
+    outcomes: "Derived revenue trends, category-wise performance insights, and identified high-demand products driving business growth.",
+    tags: ["Data Analytics", "SQL"],
+    github: "#",
+  },
 ];
 
 const ProjectsSection = () => {
