@@ -38,7 +38,7 @@ const projects = [
     problem: "Lack of centralized, real-time visibility into hotel revenue and operational KPIs for data-driven decision-making.",
     tools: ["Power BI", "SQL", "Excel"],
     outcomes: "Identified seasonal trends and peak booking periods; enabled stakeholder decision-making with dynamic drill-down filters and KPI cards.",
-    tags: ["Data Analytics", "SQL"],
+    tags: ["Data Analytics"],
     github: "https://github.com/nitishgope000-maker/hospitality-revenue-dashboard",
   },
   {
