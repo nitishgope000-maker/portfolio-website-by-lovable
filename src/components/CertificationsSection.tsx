@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import logoGoogle from "@/assets/logo-google.png";
+import logoDatabricks from "@/assets/logo-databricks.png";
 import logoJpmc from "@/assets/logo-jpmc.webp";
 import logoDeloitte from "@/assets/logo-deloitte.webp";
 import logoTata from "@/assets/logo-tata.webp";
@@ -11,6 +12,14 @@ const certs = [
     description:
       "Comprehensive 8-course program covering data cleaning, analysis, visualization, and R programming. Gained hands-on experience with spreadsheets, SQL, Tableau, and R to make data-driven decisions.",
     logo: logoGoogle,
+  },
+  {
+    title: "SQL Analytics and BI on Databricks",
+    org: "Databricks · Mar 2026",
+    description:
+      "Completed hands-on training in SQL analytics on the Databricks Lakehouse Platform, covering data exploration, dashboard creation, query optimization, and building business intelligence solutions at scale.",
+    logo: logoDatabricks,
+    logoContain: true,
   },
   {
     title: "Quantitative Research Simulation",
