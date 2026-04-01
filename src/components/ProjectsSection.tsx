@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Github } from "lucide-react";
 
-const filters = ["All", "AI", "Data Analytics", "ML", "SQL"];
+const filters = ["All", "Data Analytics", "AI/ML"];
 
 const projects = [
   {
@@ -11,7 +11,7 @@ const projects = [
     problem: "Inefficient urban resource allocation lacking data-driven spatial insights.",
     tools: ["Python", "DeepLab V3+", "DBSCAN", "Bellman-Ford"],
     outcomes: "Automated facility zone detection with optimized routing paths.",
-    tags: ["AI", "ML"],
+    tags: ["AI/ML"],
     github: "#",
   },
   {
@@ -29,7 +29,7 @@ const projects = [
     problem: "Need for hands-free, AI-powered personal automation.",
     tools: ["Python", "APIs", "Speech Recognition", "pyttsx3"],
     outcomes: "Fully functional voice assistant with multi-API integration.",
-    tags: ["AI", "ML"],
+    tags: ["AI/ML"],
     github: "https://github.com/nitishgope000-maker/jarvis-ai-personal-assisatant",
   },
   {
@@ -38,7 +38,7 @@ const projects = [
     problem: "Lack of centralized, real-time visibility into hotel revenue and operational KPIs for data-driven decision-making.",
     tools: ["Power BI", "SQL", "Excel"],
     outcomes: "Identified seasonal trends and peak booking periods; enabled stakeholder decision-making with dynamic drill-down filters and KPI cards.",
-    tags: ["Data Analytics", "SQL"],
+    tags: ["Data Analytics"],
     github: "https://github.com/nitishgope000-maker/hospitality-revenue-dashboard",
   },
   {
@@ -47,7 +47,7 @@ const projects = [
     problem: "Unstructured grocery delivery data with no clear visibility into top-performing categories and buying patterns.",
     tools: ["SQL", "MySQL", "PostgreSQL", "Data Analysis"],
     outcomes: "Derived revenue trends, category-wise performance insights, and identified high-demand products driving business growth.",
-    tags: ["Data Analytics", "SQL"],
+    tags: ["Data Analytics"],
     github: "https://github.com/nitishgope000-maker/Zepto_SQL_Analysis_Project",
   },
   {
