@@ -47,7 +47,7 @@ const projects = [
     problem: "Unstructured grocery delivery data with no clear visibility into top-performing categories and buying patterns.",
     tools: ["SQL", "MySQL", "PostgreSQL", "Data Analysis"],
     outcomes: "Derived revenue trends, category-wise performance insights, and identified high-demand products driving business growth.",
-    tags: ["Data Analytics", "SQL"],
+    tags: ["Data Analytics"],
     github: "https://github.com/nitishgope000-maker/Zepto_SQL_Analysis_Project",
   },
   {
