@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { Github } from "lucide-react";
 
 const filters = ["All", "AI", "Data Analytics", "ML", "SQL"];
 
@@ -21,7 +21,7 @@ const projects = [
     tools: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
     outcomes: "Identified key churn drivers; proposed targeted retention campaigns.",
     tags: ["Data Analytics"],
-    github: "#",
+    github: "https://github.com/nitishgope000-maker/customer-churn-analysis",
   },
   {
     title: "JARVIS: AI Personal Assistant",
@@ -30,7 +30,7 @@ const projects = [
     tools: ["Python", "APIs", "Speech Recognition", "pyttsx3"],
     outcomes: "Fully functional voice assistant with multi-API integration.",
     tags: ["AI", "ML"],
-    github: "#",
+    github: "https://github.com/nitishgope000-maker/jarvis-ai-personal-assisatant",
   },
   {
     title: "Hotel Performance Analytics Dashboard",
@@ -39,7 +39,7 @@ const projects = [
     tools: ["Power BI", "SQL", "Excel"],
     outcomes: "Identified seasonal trends and peak booking periods; enabled stakeholder decision-making with dynamic drill-down filters and KPI cards.",
     tags: ["Data Analytics", "SQL"],
-    github: "#",
+    github: "https://github.com/nitishgope000-maker/hospitality-revenue-dashboard",
   },
   {
     title: "Zepto SQL Data Analysis",
@@ -48,7 +48,16 @@ const projects = [
     tools: ["SQL", "MySQL", "PostgreSQL", "Data Analysis"],
     outcomes: "Derived revenue trends, category-wise performance insights, and identified high-demand products driving business growth.",
     tags: ["Data Analytics", "SQL"],
-    github: "#",
+    github: "https://github.com/nitishgope000-maker/Zepto_SQL_Analysis_Project",
+  },
+  {
+    title: "Weather Detector",
+    desc: "Real-time weather detection application providing current weather data and forecasts for any location worldwide.",
+    problem: "Need for a simple, accessible tool to quickly check weather conditions and forecasts.",
+    tools: ["Python", "APIs", "Data Visualization"],
+    outcomes: "Fully functional weather app with real-time data fetching, location-based search, and clean visual output.",
+    tags: ["Data Analytics"],
+    github: "https://github.com/nitishgope000-maker/Weather-Detector",
   },
 ];
 
@@ -127,11 +136,13 @@ const ProjectsSection = () => {
                   ))}
                 </div>
                 <div className="flex gap-3">
-                  <a href={p.github} className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline">
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline"
+                  >
                     <Github size={14} /> GitHub
-                  </a>
-                  <a href="#" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary">
-                    <ExternalLink size={14} /> Demo
                   </a>
                 </div>
               </motion.div>

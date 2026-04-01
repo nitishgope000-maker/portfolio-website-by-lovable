@@ -1,14 +1,14 @@
 import { useEffect, useState, lazy, Suspense } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Mail } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import profileImg from "@/assets/profile.png";
 
 const ParticleNetwork = lazy(() => import("@/components/ParticleNetwork"));
 
 const terminalLines = [
-  "> Analyzing Data...",
-  "> Building Models...",
-  "> Generating Insights...",
+  "> Querying datasets (SQL)...",
+  "> Cleaning data (Python)...",
+  "> Building dashboards (Power BI)...",
   "> Ready.",
 ];
 
@@ -48,12 +48,10 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center pt-16 grid-bg relative overflow-hidden">
-      {/* 3D Particle Network */}
       <Suspense fallback={null}>
         <ParticleNetwork />
       </Suspense>
 
-      {/* Glow orbs */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
 
@@ -69,10 +67,10 @@ const HeroSection = () => {
             Nitish <span className="gradient-text">Gope</span>
           </h1>
           <p className="text-lg text-muted-foreground mb-2">
-            Data Analytics Professional &bull; ML Enthusiast
+            Turning Data into Business Insights | SQL &bull; Python &bull; Power BI
           </p>
           <p className="text-secondary-foreground/70 max-w-md mb-8">
-            Turning raw data into actionable insights through analytics, visualization & data-driven decision making.
+            I analyze data, build dashboards, and deliver insights that drive smarter decisions.
           </p>
 
           <div className="flex flex-wrap gap-3 mb-10">
@@ -83,16 +81,10 @@ const HeroSection = () => {
               View Portfolio <ArrowRight size={16} />
             </a>
             <a
-              href="#contact"
+              href="mailto:nitishgope000@gmail.com"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground hover:border-primary hover:text-primary transition"
             >
               <Mail size={16} /> Contact Me
-            </a>
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground hover:border-primary hover:text-primary transition"
-            >
-              <Download size={16} /> Resume
             </a>
           </div>
 
@@ -137,9 +129,9 @@ const HeroSection = () => {
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ repeat: Infinity, duration: 3 }}
-              className="absolute -bottom-2 -right-2 bg-card border border-border rounded-xl px-4 py-2 text-sm font-semibold glow-border"
+              className="absolute -bottom-4 -right-4 sm:-bottom-3 sm:-right-6 bg-card border border-border rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold glow-border max-w-[200px] text-center leading-tight"
             >
-              <span className="text-primary">B.Tech</span> CSE '26
+              <span className="text-primary">Available for</span> Internship / Entry-Level Roles
             </motion.div>
           </div>
         </motion.div>
