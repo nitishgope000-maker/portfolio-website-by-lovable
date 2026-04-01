@@ -29,7 +29,7 @@ const projects = [
     problem: "Need for hands-free, AI-powered personal automation.",
     tools: ["Python", "APIs", "Speech Recognition", "pyttsx3"],
     outcomes: "Fully functional voice assistant with multi-API integration.",
-    tags: ["AI", "ML"],
+    tags: ["AI/ML"],
     github: "https://github.com/nitishgope000-maker/jarvis-ai-personal-assisatant",
   },
   {
