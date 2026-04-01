@@ -6,8 +6,9 @@ const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert("Thank you for reaching out! I'll get back to you soon.");
+    const subject = encodeURIComponent(`Message from ${form.name}`);
+    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`);
+    window.open(`mailto:nitishgope000@gmail.com?subject=${subject}&body=${body}`, '_blank');
     setForm({ name: "", email: "", message: "" });
   };
 

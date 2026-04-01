@@ -66,7 +66,7 @@ const HeroSection = () => {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
             Nitish <span className="gradient-text">Gope</span>
           </h1>
-          <p className="text-lg text-muted-foreground mb-2">
+          <p className="text-lg text-muted-foreground mb-2 whitespace-nowrap">
             Turning Data into Business Insights | SQL &bull; Python &bull; Power BI
           </p>
           <p className="text-secondary-foreground/70 max-w-md mb-8">

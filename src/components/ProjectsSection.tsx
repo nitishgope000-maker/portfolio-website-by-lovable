@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Github } from "lucide-react";
 
-const filters = ["All", "AI", "Data Analytics", "ML", "SQL"];
+const filters = ["All", "Data Analytics", "AI/ML"];
 
 const projects = [
   {
