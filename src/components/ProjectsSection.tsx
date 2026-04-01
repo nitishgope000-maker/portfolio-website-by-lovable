@@ -11,7 +11,7 @@ const projects = [
     problem: "Inefficient urban resource allocation lacking data-driven spatial insights.",
     tools: ["Python", "DeepLab V3+", "DBSCAN", "Bellman-Ford"],
     outcomes: "Automated facility zone detection with optimized routing paths.",
-    tags: ["AI", "ML"],
+    tags: ["AI/ML"],
     github: "#",
   },
   {
