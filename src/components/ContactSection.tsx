@@ -7,7 +7,6 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // placeholder
     alert("Thank you for reaching out! I'll get back to you soon.");
     setForm({ name: "", email: "", message: "" });
   };
@@ -41,8 +40,8 @@ const ContactSection = () => {
             {[
               { icon: Mail, label: "nitishgope000@gmail.com", href: "mailto:nitishgope000@gmail.com" },
               { icon: Phone, label: "+91-9382928601", href: "tel:+919382928601" },
-              { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
-              { icon: Github, label: "GitHub", href: "https://github.com" },
+              { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/nitish-gope-58370a236/" },
+              { icon: Github, label: "GitHub", href: "https://www.github.com/nitishgope000-maker" },
             ].map(({ icon: Icon, label, href }) => (
               <a
                 key={label}

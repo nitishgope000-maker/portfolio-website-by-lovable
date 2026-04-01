@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -35,12 +35,22 @@ const Navbar = () => {
           ))}
         </div>
 
-        <a
-          href="#contact"
-          className="hidden md:inline-flex px-5 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity glow-border"
-        >
-          Hire Me
-        </a>
+        <div className="hidden md:flex items-center gap-3">
+          <a
+            href="https://drive.google.com/file/d/1y6PdMoynPzx85simDdN-rhnSQWphyNWp/view?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-5 py-2 rounded-lg border border-border text-foreground text-sm font-semibold hover:border-primary hover:text-primary transition"
+          >
+            <Download size={14} /> Resume
+          </a>
+          <a
+            href="#contact"
+            className="inline-flex px-5 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity glow-border"
+          >
+            Hire Me
+          </a>
+        </div>
 
         {/* Mobile toggle */}
         <button className="md:hidden text-foreground" onClick={() => setOpen(!open)}>
@@ -67,6 +77,14 @@ const Navbar = () => {
                   {l.label}
                 </a>
               ))}
+              <a
+                href="https://drive.google.com/file/d/1y6PdMoynPzx85simDdN-rhnSQWphyNWp/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Download size={14} /> Resume
+              </a>
             </div>
           </motion.div>
         )}
