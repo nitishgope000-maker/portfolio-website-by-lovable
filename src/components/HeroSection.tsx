@@ -47,7 +47,7 @@ const HeroSection = () => {
       : "";
 
   return (
-    <section id="home" className="min-h-screen flex items-center pt-16 grid-bg relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center pt-16 pb-12 grid-bg relative overflow-hidden">
       <Suspense fallback={null}>
         <ParticleNetwork />
       </Suspense>
@@ -63,10 +63,10 @@ const HeroSection = () => {
           transition={{ duration: 0.7 }}
         >
           <p className="text-primary font-mono text-sm mb-3">Hello, I'm</p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
             Nitish <span className="gradient-text">Gope</span>
           </h1>
-          <p className="text-lg text-muted-foreground mb-2 whitespace-nowrap">
+          <p className="text-base sm:text-lg text-muted-foreground mb-2 whitespace-normal sm:whitespace-nowrap">
             Turning Data into Business Insights | SQL &bull; Python &bull; Power BI
           </p>
           <p className="text-secondary-foreground/70 max-w-md mb-8">
@@ -116,7 +116,7 @@ const HeroSection = () => {
         >
           <div className="relative">
             <div className="absolute inset-0 rounded-full bg-primary/20 blur-3xl scale-110" />
-            <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/30 glow-border">
+            <div className="relative w-56 h-56 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/30 glow-border">
               <img
                 src={profileImg}
                 alt="Nitish Gope"
@@ -129,7 +129,7 @@ const HeroSection = () => {
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ repeat: Infinity, duration: 3 }}
-              className="absolute -bottom-4 -right-4 sm:-bottom-3 sm:-right-6 bg-card border border-border rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold glow-border max-w-[200px] text-center leading-tight"
+              className="absolute -bottom-8 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:-bottom-3 sm:-right-6 bg-card border border-border rounded-xl px-2.5 py-1.5 sm:px-3 sm:py-2 text-[10px] sm:text-sm font-semibold glow-border text-center leading-tight max-w-[90vw] sm:max-w-none sm:whitespace-nowrap"
             >
               <span className="text-primary">Available for</span> Internship / Entry-Level Roles
             </motion.div>
