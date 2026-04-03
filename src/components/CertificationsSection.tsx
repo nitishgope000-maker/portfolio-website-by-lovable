@@ -104,7 +104,7 @@ const CertificationsSection = () => (
                 href={c.credential}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs text-primary hover:underline mt-1 ml-15"
+                className="inline-flex items-center gap-1.5 text-xs text-primary hover:underline mt-1 sm:ml-[3.75rem]"
               >
                 <ExternalLink size={12} /> View Credential
               </a>

@@ -116,7 +116,7 @@ const HeroSection = () => {
         >
           <div className="relative">
             <div className="absolute inset-0 rounded-full bg-primary/20 blur-3xl scale-110" />
-            <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/30 glow-border">
+            <div className="relative w-56 h-56 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/30 glow-border">
               <img
                 src={profileImg}
                 alt="Nitish Gope"
