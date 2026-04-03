@@ -17,8 +17,7 @@ const ContactSection = () => {
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           className="text-center mb-14"
         >
           <p className="text-primary font-mono text-sm mb-2">GET IN TOUCH</p>
@@ -34,8 +33,7 @@ const ContactSection = () => {
           {/* Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, x: 0 }}
             className="space-y-6"
           >
             {[
@@ -62,8 +60,7 @@ const ContactSection = () => {
           {/* Form */}
           <motion.form
             initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, x: 0 }}
             onSubmit={handleSubmit}
             className="space-y-4"
           >

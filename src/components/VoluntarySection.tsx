@@ -25,8 +25,7 @@ const VoluntarySection = () => (
     <div className="container mx-auto px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        animate={{ opacity: 1, y: 0 }}
         className="text-center mb-14"
       >
         <p className="text-primary font-mono text-sm mb-2">EXPERIENCE</p>
@@ -40,8 +39,7 @@ const VoluntarySection = () => (
           <motion.div
             key={exp.role}
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.15 }}
             className="p-6 rounded-xl bg-card border border-border card-hover group"
           >
