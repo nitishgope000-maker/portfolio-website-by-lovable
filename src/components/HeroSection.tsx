@@ -47,7 +47,7 @@ const HeroSection = () => {
       : "";
 
   return (
-    <section id="home" className="min-h-screen flex items-center pt-24 sm:pt-20 pb-12 grid-bg relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center pt-24 sm:pt-20 pb-20 sm:pb-12 grid-bg relative overflow-hidden">
       <Suspense fallback={null}>
         <ParticleNetwork />
       </Suspense>
