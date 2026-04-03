@@ -129,7 +129,7 @@ const HeroSection = () => {
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ repeat: Infinity, duration: 3 }}
-              className="absolute -bottom-6 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:-bottom-3 sm:-right-6 bg-card border border-border rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold glow-border whitespace-nowrap text-center leading-tight"
+              className="absolute -bottom-8 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:-bottom-3 sm:-right-6 bg-card border border-border rounded-xl px-2.5 py-1.5 sm:px-3 sm:py-2 text-[10px] sm:text-sm font-semibold glow-border whitespace-nowrap text-center leading-tight"
             >
               <span className="text-primary">Available for</span> Internship / Entry-Level Roles
             </motion.div>
