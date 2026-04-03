@@ -40,8 +40,7 @@ const ProgressBar = ({ skill, delay }: { skill: Skill; delay: number }) => (
     <div className="h-2 rounded-full bg-secondary overflow-hidden">
       <motion.div
         initial={{ width: 0 }}
-        whileInView={{ width: `${skill.level}%` }}
-        viewport={{ once: true }}
+        animate={{ width: `${skill.level}%` }}
         transition={{ duration: 0.8, delay }}
         className="h-full rounded-full"
         style={{ background: "var(--gradient-primary)" }}
@@ -55,8 +54,7 @@ const SkillsSection = () => (
     <div className="container mx-auto px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        animate={{ opacity: 1, y: 0 }}
         className="text-center mb-14"
       >
         <p className="text-primary font-mono text-sm mb-2">SKILLS</p>

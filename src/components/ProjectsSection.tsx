@@ -70,8 +70,7 @@ const ProjectsSection = () => {
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           className="text-center mb-10"
         >
           <p className="text-primary font-mono text-sm mb-2">PORTFOLIO</p>

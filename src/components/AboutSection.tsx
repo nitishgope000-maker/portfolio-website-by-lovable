@@ -6,8 +6,7 @@ const AboutSection = () => (
     <div className="container mx-auto px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="text-center mb-14"
       >
@@ -20,8 +19,7 @@ const AboutSection = () => (
       <div className="grid md:grid-cols-2 gap-12 items-start">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, x: 0 }}
           className="space-y-5"
         >
           <p className="text-secondary-foreground/80 leading-relaxed">
@@ -34,8 +32,7 @@ const AboutSection = () => (
 
         <motion.div
           initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, x: 0 }}
           className="grid gap-4"
         >
           {[
