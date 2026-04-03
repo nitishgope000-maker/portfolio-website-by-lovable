@@ -47,7 +47,7 @@ const HeroSection = () => {
       : "";
 
   return (
-    <section id="home" className="min-h-screen flex items-center pt-16 pb-12 grid-bg relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center pt-24 sm:pt-20 pb-20 sm:pb-12 grid-bg relative overflow-hidden">
       <Suspense fallback={null}>
         <ParticleNetwork />
       </Suspense>
@@ -116,7 +116,7 @@ const HeroSection = () => {
         >
           <div className="relative">
             <div className="absolute inset-0 rounded-full bg-primary/20 blur-3xl scale-110" />
-            <div className="relative w-56 h-56 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/30 glow-border">
+            <div className="relative w-48 h-48 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/30 glow-border">
               <img
                 src={profileImg}
                 alt="Nitish Gope"
