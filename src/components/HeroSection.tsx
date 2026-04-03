@@ -63,7 +63,7 @@ const HeroSection = () => {
           transition={{ duration: 0.7 }}
         >
           <p className="text-primary font-mono text-sm mb-3">Hello, I'm</p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
             Nitish <span className="gradient-text">Gope</span>
           </h1>
           <p className="text-base sm:text-lg text-muted-foreground mb-2 whitespace-normal sm:whitespace-nowrap">
