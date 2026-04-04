@@ -110,7 +110,7 @@ const ProjectsSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="rounded-xl bg-background border border-border p-6 card-hover flex flex-col"
+                className="rounded-xl bg-background border border-border p-6 card-hover glow-pulse flex flex-col"
               >
                 <div className="flex gap-2 mb-3 flex-wrap">
                   {p.tags.map((t) => (
