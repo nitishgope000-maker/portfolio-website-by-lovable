@@ -51,6 +51,15 @@ const projects = [
     github: "https://github.com/nitishgope000-maker/Zepto_SQL_Analysis_Project",
   },
   {
+    title: "Customer Trends Data Analysis",
+    desc: "Analyzed 3,900 transactional records to uncover spending patterns, customer segmentation, and product performance using SQL, Python, and Power BI.",
+    problem: "Lack of actionable insights into customer shopping behavior, spending trends, and subscription impact on revenue.",
+    tools: ["Python", "SQL", "PostgreSQL", "Power BI", "Pandas"],
+    outcomes: "Identified male customers generate 2× more revenue; segmented 3,116 loyal customers; revealed 27% subscription rate with no spending difference; built interactive dashboard.",
+    tags: ["Data Analytics"],
+    github: "#",
+  },
+  {
     title: "Weather Detector",
     desc: "Real-time weather detection application providing current weather data and forecasts for any location worldwide.",
     problem: "Need for a simple, accessible tool to quickly check weather conditions and forecasts.",
