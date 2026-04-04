@@ -56,7 +56,7 @@ const ServicesSection = () => (
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.15 }}
-            className="p-6 rounded-xl bg-card border border-border card-hover group"
+            className="p-6 rounded-xl bg-card border border-border card-hover glow-pulse group"
           >
             <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
               <s.icon size={24} />
