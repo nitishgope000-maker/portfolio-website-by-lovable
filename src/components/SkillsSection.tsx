@@ -77,13 +77,16 @@ const SkillsSection = () => (
           <div>
             <h3 className="font-semibold text-lg mb-4">Areas of Expertise</h3>
             <div className="flex flex-wrap gap-2">
-              {expertise.map((e) => (
-                <span
+              {expertise.map((e, i) => (
+                <motion.span
                   key={e}
-                  className="px-4 py-2 rounded-lg bg-primary/10 text-primary border border-primary/20 text-sm font-medium hover:bg-primary/20 transition"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: i * 0.05 }}
+                  className="px-4 py-2 rounded-lg bg-primary/10 text-primary border border-primary/20 text-sm font-medium hover:bg-primary/20 hover:scale-105 transition-all cursor-default"
                 >
                   {e}
-                </span>
+                </motion.span>
               ))}
             </div>
           </div>
