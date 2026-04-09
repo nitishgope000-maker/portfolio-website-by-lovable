@@ -61,8 +61,8 @@ const certs = [
 ];
 
 const CertificationsSection = () => (
-  <section id="certifications" className="py-24 relative overflow-hidden">
-    <div className="container mx-auto px-4">
+  <section id="certifications" className="py-16 sm:py-24 relative overflow-hidden">
+    <div className="container mx-auto px-5 sm:px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -81,7 +81,7 @@ const CertificationsSection = () => (
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.08 }}
-            className="flex flex-col sm:flex-row gap-4 sm:gap-8 p-6 rounded-xl bg-card border border-border card-hover glow-pulse group"
+            className="flex flex-col sm:flex-row gap-4 sm:gap-8 p-4 sm:p-6 rounded-xl bg-card border border-border card-hover glow-pulse group"
           >
             {/* Left side */}
             <div className="sm:w-2/5 flex flex-col gap-3 shrink-0">

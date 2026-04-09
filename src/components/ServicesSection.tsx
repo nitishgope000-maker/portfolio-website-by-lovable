@@ -36,8 +36,8 @@ const services = [
 ];
 
 const ServicesSection = () => (
-  <section id="services" className="py-24 relative overflow-hidden">
-    <div className="container mx-auto px-4">
+  <section id="services" className="py-16 sm:py-24 relative overflow-hidden">
+    <div className="container mx-auto px-5 sm:px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -49,7 +49,7 @@ const ServicesSection = () => (
         </h2>
       </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
         {services.map((s, i) => (
           <motion.div
             key={s.title}
