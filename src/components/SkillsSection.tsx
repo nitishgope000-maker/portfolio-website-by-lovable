@@ -50,8 +50,8 @@ const ProgressBar = ({ skill, delay }: { skill: Skill; delay: number }) => (
 );
 
 const SkillsSection = () => (
-  <section id="skills" className="py-24 bg-card/50 relative overflow-hidden">
-    <div className="container mx-auto px-4">
+  <section id="skills" className="py-16 sm:py-24 bg-card/50 relative overflow-hidden">
+    <div className="container mx-auto px-5 sm:px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}

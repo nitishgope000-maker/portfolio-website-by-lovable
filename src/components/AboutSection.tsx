@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { GraduationCap, Brain, Target } from "lucide-react";
 
 const AboutSection = () => (
-  <section id="about" className="py-24 relative overflow-hidden">
-    <div className="container mx-auto px-4">
+  <section id="about" className="py-16 sm:py-24 relative overflow-hidden">
+    <div className="container mx-auto px-5 sm:px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}

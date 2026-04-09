@@ -76,8 +76,8 @@ const ProjectsSection = () => {
   const filtered = active === "All" ? projects : projects.filter((p) => p.tags.includes(active));
 
   return (
-    <section id="projects" className="py-24 bg-card/50 relative overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="py-16 sm:py-24 bg-card/50 relative overflow-hidden">
+      <div className="container mx-auto px-5 sm:px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -112,7 +112,7 @@ const ProjectsSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
           >
             {filtered.map((p, i) => (
               <motion.div
@@ -120,7 +120,7 @@ const ProjectsSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="rounded-xl bg-background border border-border p-6 card-hover glow-pulse flex flex-col"
+                className="rounded-xl bg-background border border-border p-4 sm:p-6 card-hover glow-pulse flex flex-col"
               >
                 <div className="flex gap-2 mb-3 flex-wrap">
                   {p.tags.map((t) => (

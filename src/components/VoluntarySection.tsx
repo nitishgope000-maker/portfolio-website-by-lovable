@@ -21,8 +21,8 @@ const experiences = [
 ];
 
 const VoluntarySection = () => (
-  <section id="voluntary" className="py-24 relative overflow-hidden">
-    <div className="container mx-auto px-4">
+  <section id="voluntary" className="py-16 sm:py-24 relative overflow-hidden">
+    <div className="container mx-auto px-5 sm:px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -34,14 +34,14 @@ const VoluntarySection = () => (
         </h2>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
         {experiences.map((exp, i) => (
           <motion.div
             key={exp.role}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.15 }}
-            className="p-6 rounded-xl bg-card border border-border card-hover glow-pulse group"
+            className="p-4 sm:p-6 rounded-xl bg-card border border-border card-hover glow-pulse group"
           >
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">

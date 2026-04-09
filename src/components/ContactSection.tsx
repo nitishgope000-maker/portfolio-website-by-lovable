@@ -13,8 +13,8 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-card/50 relative overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-16 sm:py-24 bg-card/50 relative overflow-hidden">
+      <div className="container mx-auto px-5 sm:px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -29,7 +29,7 @@ const ContactSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 max-w-4xl mx-auto">
           {/* Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -52,7 +52,7 @@ const ContactSection = () => {
                 <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                   <Icon size={20} />
                 </div>
-                <span className="text-sm text-foreground">{label}</span>
+                <span className="text-sm text-foreground break-all sm:break-normal">{label}</span>
               </a>
             ))}
           </motion.div>
