@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github } from "lucide-react";
+import { Github, Play } from "lucide-react";
 
 const filters = ["All", "Data Analytics", "AI/ML"];
 
@@ -40,6 +40,7 @@ const projects = [
     outcomes: "Identified seasonal trends and peak booking periods; enabled stakeholder decision-making with dynamic drill-down filters and KPI cards.",
     tags: ["Data Analytics"],
     github: "https://github.com/nitishgope000-maker/hospitality-revenue-dashboard",
+    video: "https://youtu.be/XBJzUpY7wBc?si=lEIzplO_FHoOTk9j",
   },
   {
     title: "Zepto SQL Data Analysis",
@@ -57,7 +58,7 @@ const projects = [
     tools: ["Python", "SQL", "PostgreSQL", "Power BI", "Pandas"],
     outcomes: "Identified male customers generate 2× more revenue; segmented 3,116 loyal customers; revealed 27% subscription rate with no spending difference; built interactive dashboard.",
     tags: ["Data Analytics"],
-    github: "#",
+    github: "https://github.com/nitishgope000-maker/customer_behavior_analysis",
   },
   {
     title: "Weather Detector",
@@ -152,6 +153,16 @@ const ProjectsSection = () => {
                   >
                     <Github size={14} /> GitHub
                   </a>
+                  {p.video && (
+                    <a
+                      href={p.video}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline"
+                    >
+                      <Play size={14} /> Video
+                    </a>
+                  )}
                 </div>
               </motion.div>
             ))}
