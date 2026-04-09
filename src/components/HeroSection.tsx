@@ -47,15 +47,15 @@ const HeroSection = () => {
       : "";
 
   return (
-    <section id="home" className="min-h-screen flex items-center pt-24 sm:pt-20 pb-20 sm:pb-12 grid-bg relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center pt-28 sm:pt-24 pb-24 sm:pb-12 grid-bg relative overflow-hidden">
       <Suspense fallback={null}>
         <ParticleNetwork />
       </Suspense>
 
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-4 sm:left-10 w-48 sm:w-72 h-48 sm:h-72 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-4 sm:right-10 w-64 sm:w-96 h-64 sm:h-96 bg-accent/10 rounded-full blur-3xl" />
 
-      <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+      <div className="container mx-auto px-5 sm:px-4 grid lg:grid-cols-2 gap-8 sm:gap-12 items-center relative z-10">
         {/* Left */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -63,17 +63,17 @@ const HeroSection = () => {
           transition={{ duration: 0.7 }}
         >
           <p className="text-primary font-mono text-sm mb-3">Hello, I'm</p>
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-3">
             Nitish <span className="gradient-text">Gope</span>
           </h1>
-          <p className="text-base sm:text-lg text-muted-foreground mb-2 whitespace-normal sm:whitespace-nowrap">
-            Turning Data into Business Insights | SQL &bull; Python &bull; Power BI
+          <p className="text-sm sm:text-lg text-muted-foreground mb-2 whitespace-normal sm:whitespace-nowrap">
+            Turning Data into Business Insights | SQL&nbsp;&bull;&nbsp;Python&nbsp;&bull;&nbsp;Power&nbsp;BI
           </p>
           <p className="text-secondary-foreground/70 max-w-md mb-8">
             I analyze data, build dashboards, and deliver insights that drive smarter decisions.
           </p>
 
-          <div className="flex flex-wrap gap-3 mb-10">
+          <div className="flex flex-wrap gap-3 mb-8 sm:mb-10">
             <a
               href="#projects"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition glow-border"
@@ -89,7 +89,7 @@ const HeroSection = () => {
           </div>
 
           {/* Terminal */}
-          <div className="bg-card border border-border rounded-lg p-4 font-mono text-sm max-w-md">
+          <div className="bg-card border border-border rounded-lg p-3 sm:p-4 font-mono text-xs sm:text-sm max-w-md">
             <div className="flex gap-1.5 mb-3">
               <span className="w-3 h-3 rounded-full bg-destructive/60" />
               <span className="w-3 h-3 rounded-full bg-yellow-500/60" />
@@ -116,20 +116,22 @@ const HeroSection = () => {
         >
           <div className="relative">
             <div className="absolute inset-0 rounded-full bg-primary/20 blur-3xl scale-110" />
-            <div className="relative w-48 h-48 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/30 glow-border">
+            <div className="relative w-44 h-44 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary/30 glow-border">
               <img
                 src={profileImg}
                 alt="Nitish Gope"
                 className="w-full h-full object-cover"
                 width={1024}
                 height={1024}
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
             {/* Floating badge */}
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ repeat: Infinity, duration: 3 }}
-              className="absolute -bottom-8 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:-bottom-3 sm:-right-6 bg-card border border-border rounded-xl px-2.5 py-1.5 sm:px-3 sm:py-2 text-[10px] sm:text-sm font-semibold glow-border text-center leading-tight max-w-[90vw] sm:max-w-none sm:whitespace-nowrap"
+              className="absolute -bottom-10 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:-bottom-3 sm:-right-6 bg-card border border-border rounded-xl px-2.5 py-1.5 sm:px-3 sm:py-2 text-[9px] sm:text-sm font-semibold glow-border text-center leading-tight max-w-[85vw] sm:max-w-none sm:whitespace-nowrap"
             >
               <span className="text-primary">Available for</span> Internship / Entry-Level Roles
             </motion.div>
